@@ -14,42 +14,55 @@ $Grayish_blue: hsl(220, 15%, 55%);
 $Dark_blue: hsl(218, 44%, 22%);
 
 // TYPOGRAPHY
-$font-size: 15px;
 
 $font-family: 'Outfit', sans-serif;
 
+@mixin center {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
 body{
     background-color: $Light_gray;
     font-family: $font-family;
-    font-size: $font-size;
     text-align: center;
+    @include center();
 }
 
     .parent {
     background-color: $White;
-    margin: 1rem;
     border-radius: 1rem;
-    height: auto;
-    display: grid;
-    place-items: center;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr;
+    max-width: 300px;
   }
 
     .card {
-    
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    justify-content: space-between;
   }
 
   img{
-    width: 100%;
-    border-radius: 1rem;
+    border-radius: .5rem;
   }
 
-    h3 {
-    margin: 0
+  .space > * {
+      margin-bottom: 1rem;
   }
+
+  h3, p{
+      padding: 0 .5rem;
+  }
+
+  h3{
+      color: $Dark_blue;
+      font-size: 20px;
+
+  }
+  p{
+    color: $Grayish_blue;
+    font-size: 14px;
+  }
+
